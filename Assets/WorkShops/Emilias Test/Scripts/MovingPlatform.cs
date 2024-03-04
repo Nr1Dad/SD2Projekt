@@ -1,37 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour 
 {
-    private float min;
-    private float max;
-    private float speed;
-    [SerializeField]
-    public GameObject platform1;
-    public bool goingRight;
-    // Start is called before the first frame update
-   
+    public Transform platform;
+    public Transform startPoint;
+    public Transform endPoint;
+    public float speed = 1.0f;
 
-    void Start()
-    {
-        
-    }
+    int direction = 1;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
-    }
+        //Finder om vores target point er end eller start
+        Vector2 target = currentMovementTarget();
 
-    private void MoveHoz()
-    {
-        if (platform1.transform.position.x < max)
+        // Lerp, som får platformen til at bevæge sig på en "linje" lavet udfra plaformens position og target.
+        //Lerp = lineær interpolation
+
+        platform.position = Vector2.Lerp(platform.position, target, speed * Time.deltaTime);
+
+        //For at kunne få ændret vores target skal vi først finde distancen mellem plarform og target
+        float distance = (target - (Vector2)platform.position).magnitude;
+
+        //Hvis distancen er lille nok så ganger vi direction med -1 for at skifte target.
+        if (distance <= 0.1f) 
         {
-            platform1.transform.Translate(Time.deltaTime * speed, 0f, 0f);
-        } else if (platform1.transform.position.x > min)
-            {
-                platform1.transform.Translate(-Time.deltaTime * speed, 0f, 0f);
-            }
+            direction *= -1; 
+        }
     }
+
+    Vector2 currentMovementTarget()
+    {
+        if (direction == 1)
+        {
+            return startPoint.position; 
+        } 
+        else 
+        {
+            return endPoint.position;
+        }
+    }
+
+
+    private void OnDrawGizmos()
+    {
+        //debug visualization 
+
+        if (platform != null && startPoint!=null && endPoint != null)
+        {
+            Gizmos.DrawLine(platform.transform.position, startPoint.position);
+            Gizmos.DrawLine(platform.transform.position, endPoint.position);
+        }
+    }
+
+
 }

@@ -12,7 +12,7 @@ public class Platform : MonoBehaviour
 
     void Start()
     { 
-        Instantiate(platform);    
+        
     }
 
     // Update is called once per frame
