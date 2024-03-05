@@ -20,6 +20,7 @@ public class Breakplatform : MonoBehaviour
 
     private IEnumerator Fall()
     {
+        //Antagelsen er at platformen ikke respawner :)))))
         yield return new WaitForSeconds(fallDelay);
         rb.bodyType = RigidbodyType2D.Dynamic;
         Destroy(gameObject, destroyDelay); 
