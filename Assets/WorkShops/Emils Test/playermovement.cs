@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class playermovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D coll;
@@ -26,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
         // Skal først bruges ved animation
         //sprite = GetComponent<SpriteRenderer>();
         //anim = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        
     }
 
     
@@ -77,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }*/
 
-    public bool IsGrounded()
+   private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
