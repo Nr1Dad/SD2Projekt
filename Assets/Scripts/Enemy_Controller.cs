@@ -27,12 +27,11 @@ public class Enemy_Controller : MonoBehaviour
         
         if (enemyType == 1) //sets enemy to basic melee
         {
-            
-           
+            Debug.Log("I'm a melee enemy!");           
         }
         else if(enemyType == 2) //sets enemy to basic range
         {
-
+            Debug.Log("I'm a ranged enemy!");
         }
     }
 
@@ -59,20 +58,6 @@ public class Enemy_Controller : MonoBehaviour
 
         Vector2 targetDirection = (targetPoint - currentPosition).normalized; 
         rb.MovePosition(currentPosition + targetDirection * speed * Time.deltaTime);
-        Debug.Log("I'm moving");
     }
-
-    /*public void OnTriggerEnter2D(Collider2D EnemyToPlayer)
-    {
-        
-    }
-
-    public void OnCollisionEnter2D(Collision2D EnemyToWall)
-    {
-        if (EnemyToWall.gameObject.tag == "Wall")
-        {
-            
-        }
-    }*/
 }
 
