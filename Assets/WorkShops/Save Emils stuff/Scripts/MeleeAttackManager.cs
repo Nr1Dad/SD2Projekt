@@ -18,7 +18,7 @@ public class MeleeAttackManager : MonoBehaviour
 
     
     //The Animator component on the player
-    private Animator anim;
+    //private Animator anim;
     //The Character script on the player; this script on my project manages the grounded state, so if you have a different script for that reference that script
     private PlayerMovement playerMovement;
 
@@ -26,7 +26,7 @@ public class MeleeAttackManager : MonoBehaviour
     private void Awake()
     {
         //The Animator component on the player
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         //The Character script on the player; this script on my project manages the grounded state, so if you have a different script for that reference that script
         playerMovement = GetComponent<PlayerMovement>();
         //The animator on the meleePrefab
@@ -42,7 +42,7 @@ public class MeleeAttackManager : MonoBehaviour
 
     private void CheckInput()
     {
-        //Checks to see if Backspace key is pressed which I define as melee attack; you can of course change this to anything you would want
+        //Checks to see if L key is pressed which I define as melee attack; you can of course change this to anything you would want
         if (Input.GetKeyDown(KeyCode.L))
         {
             //Sets the meleeAttack bool to true
@@ -57,7 +57,7 @@ public class MeleeAttackManager : MonoBehaviour
         if (meleeAttack && Input.GetAxis("Vertical") > 0)
         {
             //Turns on the animation for the player to perform an upward melee attack
-            anim.SetTrigger("UpwardMelee");
+            //anim.SetTrigger("UpwardMelee");
             //Turns on the animation on the melee weapon to show the swipe area for the melee attack upwards
             meleeAnimator.SetTrigger("UpwardMeleeSwipe");
         }
@@ -65,7 +65,7 @@ public class MeleeAttackManager : MonoBehaviour
         if (meleeAttack && Input.GetAxis("Vertical") < 0 && !playerMovement.IsGrounded())
         {
             //Turns on the animation for the player to perform a downward melee attack
-            anim.SetTrigger("DownwardMelee");
+            //anim.SetTrigger("DownwardMelee");
             //Turns on the animation on the melee weapon to show the swipe area for the melee attack downwards
             meleeAnimator.SetTrigger("DownwardMeleeSwipe");
         }
@@ -75,7 +75,7 @@ public class MeleeAttackManager : MonoBehaviour
             || meleeAttack && (Input.GetAxis("Vertical") < 0 && playerMovement.IsGrounded()))
         {
             //Turns on the animation for the player to perform a forward melee attack
-            anim.SetTrigger("ForwardMelee");
+            //anim.SetTrigger("ForwardMelee");
             //Turns on the animation on the melee weapon to show the swipe area for the melee attack forwards
             meleeAnimator.SetTrigger("ForwardMeleeSwipe");
         }

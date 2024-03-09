@@ -21,7 +21,7 @@ public class MeleeWeapon : MonoBehaviour
     //Determines if the melee strike is downwards to perform extra force to fight against gravity
     private bool downwardStrike;
 
-    private void awake()
+    private void Awake()
     {
         //Reference to the Character script on the player; if you don't have this or it's named something different, either omit it or change the class name to what your Character script is called
         playerMovement = GetComponentInParent<PlayerMovement>();
