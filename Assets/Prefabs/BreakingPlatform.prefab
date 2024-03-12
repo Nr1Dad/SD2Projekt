@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6348034127452395494}
   - component: {fileID: 1353935827547107851}
   - component: {fileID: 5634412053863408750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BreakingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,8 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103c54d33f84d4443b353e5ea77f8c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallDelay: 0
-  destroyDelay: 0
+  fallDelay: 1
+  destroyDelay: 5
   rb: {fileID: 1597123876580610758}
 --- !u!66 &5634412053863408750
 CompositeCollider2D:
