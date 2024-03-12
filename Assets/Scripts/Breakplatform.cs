@@ -12,7 +12,7 @@ public class Breakplatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             StartCoroutine(Fall()); 
         }
