@@ -12,6 +12,8 @@ public class Enemy_Controller : MonoBehaviour
     private Vector2 targetPoint;
     public int speed = 1;
 
+    PlayerHealth playerhealthscript;
+
 
     private void Awake()
     {
@@ -58,6 +60,14 @@ public class Enemy_Controller : MonoBehaviour
 
         Vector2 targetDirection = (targetPoint - currentPosition).normalized; 
         rb.MovePosition(currentPosition + targetDirection * speed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerhealthscript.Damage(1);
+        }
     }
 }
 
