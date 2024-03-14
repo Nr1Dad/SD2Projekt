@@ -45,17 +45,18 @@ public class Enemy_Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 currentPosition = transform.position;               
-
-        if (currentPosition == endPoint)
+        //Movement for the enemy. Enemy moves back and forth always starting left to right.
+        Vector2 currentPosition = transform.position;
+        
+        if (currentPosition == endPoint || currentPosition.x > endPoint.x)
         {
             targetPoint = startPoint;
-            Debug.Log("Changed target to start point");
+            //Debug.Log("Changed target to start point");
         }
-        else if (currentPosition == startPoint)
+        else if (currentPosition == startPoint || currentPosition.x < startPoint.x)
         {
             targetPoint = endPoint;
-            Debug.Log("Changed target to end point");
+            //Debug.Log("Changed target to end point");
         }
 
         Vector2 targetDirection = (targetPoint - currentPosition).normalized; 
@@ -64,9 +65,13 @@ public class Enemy_Controller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerhealthscript.Damage(1);
+            Debug.Log("hit a player");
+            collision.gameObject.GetComponent<PlayerHealth>().Damage(1);
+
+            GetComponent<EnemyHealth>().Damage(1);
         }
     }
 }
