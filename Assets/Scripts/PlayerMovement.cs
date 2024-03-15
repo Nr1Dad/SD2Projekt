@@ -39,14 +39,17 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2 (dirX * moveSpeed, rb.velocity.y);
-
-        if(Input.GetButtonDown("Jump") && IsGrounded()) 
+        Debug.Log(IsGrounded());
+        if (Input.GetButtonDown("Jump") && IsGrounded()) 
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
+   
+
         //Methode til at ændre animations
         //UpdateAnimationState();
+        
     }
 
     //Methode til at ændre animations
@@ -86,5 +89,6 @@ public class PlayerMovement : MonoBehaviour
    public bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+       
     }
 }

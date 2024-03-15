@@ -780,11 +780,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5310233478672022567, guid: 97aa39962304b12418b44a75749649ce, type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5310233478672022567, guid: 97aa39962304b12418b44a75749649ce, type: 3}
       propertyPath: moveSpeed
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281213545436231517, guid: 97aa39962304b12418b44a75749649ce, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281213545436231517, guid: 97aa39962304b12418b44a75749649ce, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
