@@ -19,6 +19,7 @@ public class Enemy_Controller : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         startPoint = transform.position;
+        endPoint.y = transform.position.y;
         targetPoint = endPoint;
     }
 
