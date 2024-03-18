@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5906730006818544667}
   - component: {fileID: 8281213545436231517}
   - component: {fileID: 5310233478672022567}
+  - component: {fileID: 4859471681497018788}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -177,6 +178,23 @@ MonoBehaviour:
     m_Bits: 64
   jumpForce: 14
   moveSpeed: 7
+--- !u!114 &4859471681497018788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867105305749829108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48c244fafdc9eb45bafb6c182419f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageable: 1
+  healthAmount: 100
+  invulnerabilityTime: 0.2
+  canRespawn: 0
+  respawnPoint: {fileID: 0}
 --- !u!1 &8749150774024450206
 GameObject:
   m_ObjectHideFlags: 0
