@@ -11,6 +11,7 @@ public class Enemy_Controller : MonoBehaviour
     public Vector2 endPoint;
     private Vector2 targetPoint;
     public int speed = 1;
+    public int distance;
 
     PlayerHealth playerhealthscript;
 
@@ -20,6 +21,7 @@ public class Enemy_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         startPoint = transform.position;
         endPoint.y = transform.position.y;
+        endPoint.x = transform.position.x + distance;
         targetPoint = endPoint;
     }
 
