@@ -78,8 +78,6 @@ public class Enemy_Controller : MonoBehaviour
         {
             Debug.Log("hit a player");
             collision.gameObject.GetComponent<PlayerHealth>().Damage(1);
-
-            GetComponent<EnemyHealth>().Damage(5);
         }
     }
 }
