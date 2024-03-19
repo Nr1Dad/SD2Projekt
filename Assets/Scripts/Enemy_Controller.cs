@@ -12,6 +12,7 @@ public class Enemy_Controller : MonoBehaviour
     private Vector2 targetPoint;
     public int speed = 1;
     public int distance;
+    private SpriteRenderer meleeEnemyRenderer;
 
     PlayerHealth playerhealthscript;
 
@@ -19,6 +20,8 @@ public class Enemy_Controller : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        meleeEnemyRenderer = gameObject.GetComponent<SpriteRenderer>();
+
         startPoint = transform.position;
         endPoint.y = transform.position.y;
         endPoint.x = transform.position.x + distance;
@@ -54,11 +57,13 @@ public class Enemy_Controller : MonoBehaviour
         if (currentPosition == endPoint || currentPosition.x > endPoint.x)
         {
             targetPoint = startPoint;
+            meleeEnemyRenderer.flipX = false;
             //Debug.Log("Changed target to start point");
         }
         else if (currentPosition == startPoint || currentPosition.x < startPoint.x)
         {
             targetPoint = endPoint;
+            meleeEnemyRenderer.flipX = true;
             //Debug.Log("Changed target to end point");
         }
 

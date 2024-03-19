@@ -675,8 +675,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Basic_Melee
       objectReference: {fileID: 0}
+    - target: {fileID: 9210304814368442162, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210304814368442162, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 118ad7b34823b45968ce5627382b21b3, type: 3}
+    - target: {fileID: 9210304814368442162, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210304814368442162, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2136767485301197305, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
