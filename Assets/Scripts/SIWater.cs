@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoryInteraction : MonoBehaviour
+public class SIWater : MonoBehaviour
 {
-    public GameObject StoryElement1;
+    public GameObject Water;
     public bool interacted;
     // Start is called before the first frame update
     void Start()
     {
         interacted = false;
-        StoryElement1.gameObject.SetActive(false);
+        Water.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,14 +24,8 @@ public class StoryInteraction : MonoBehaviour
         interacted = true;
         if (interacted)
         {
-            StoryElement1.gameObject.SetActive(true);
-            Invoke("TurnOff", 2.0f); 
+            Water.gameObject.SetActive(true);
         }
     }
 
-    private void TurnOff()
-    {
-        StoryElement1.gameObject.SetActive(false);
-        interacted=false;
-    }
 }
