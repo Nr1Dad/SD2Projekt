@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
 
     // Skal først bruges ved animation
-    //private SpriteRenderer sprite;
-    //private Animator anim;
+    private SpriteRenderer sprite;
+    private Animator anim;
     [SerializeField] private LayerMask jumpableGround;  
 
     private float dirX = 0f;
@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
 
         // Skal først bruges ved animation
-        //sprite = GetComponent<SpriteRenderer>();
-        //anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -48,12 +48,12 @@ public class PlayerMovement : MonoBehaviour
    
 
         //Methode til at ændre animations
-        //UpdateAnimationState();
+        UpdateAnimationState();
         
     }
 
     //Methode til at ændre animations
-    /*private void UpdateAnimationState()
+    private void UpdateAnimationState()
     {
         MovementState state;
 
@@ -68,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.running;
             sprite.flipX = true;
         }
+        
         else
         {
             state = MovementState.idle;
@@ -84,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.SetInteger("state", (int)state);
-    }*/
+    }
 
    public bool IsGrounded()
     {
