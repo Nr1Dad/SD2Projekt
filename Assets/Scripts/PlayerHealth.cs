@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     //Bool that manages if the player can receive more damage
     private bool hit;
     //The current amount after receiving damage the player has
-    private int currentHealth;
+    public int currentHealth;
     public bool canRespawn;
     public Transform respawnPoint;
 
@@ -37,7 +37,8 @@ public class PlayerHealth : MonoBehaviour
             if (currentHealth <= 0) {
                 //Caps currentHealth to 0 for cleaner code
                 currentHealth = healthAmount;
-                gameObject.transform.position = respawnPoint.position; 
+                gameObject.transform.position = respawnPoint.position;
+                hit = false;
             }
             else {
                 //Coroutine that runs to allow the player to receive damage again
