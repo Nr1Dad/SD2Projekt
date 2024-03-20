@@ -54,17 +54,20 @@ public class MeleeAttackManager : MonoBehaviour
             meleeAttack = false;
         }
 
+        // Chacks if player is moving backwards for a backwards attack
         if (meleeAttack && Input.GetAxis("Horizontal") < 0)
         {
 
             meleeAnimator.SetTrigger("BackwardsMeleeSwipe");
         }
 
+        //chacks if player is moving forwards for a forwards attack
         if (meleeAttack && Input.GetAxis("Horizontal") > 0)
         {
 
             meleeAnimator.SetTrigger("ForwardMeleeSwipe");
         }
+
 
         //Checks to see if meleeAttack is true and pressing up
         if (meleeAttack && Input.GetAxis("Vertical") > 0)
@@ -84,7 +87,7 @@ public class MeleeAttackManager : MonoBehaviour
         }
 
         //Checks to see if meleeAttack is true and not pressing any direction
-        /*if ((meleeAttack && Input.GetAxis("Vertical") == 0)
+        if ((meleeAttack && Input.GetAxis("Horizontal") == 0)
         //OR if melee attack is true and pressing down while grounded
             || meleeAttack && (Input.GetAxis("Vertical") < 0 && playerMovement.IsGrounded()))
         {
@@ -92,7 +95,7 @@ public class MeleeAttackManager : MonoBehaviour
             //anim.SetTrigger("ForwardMelee");
             //Turns on the animation on the melee weapon to show the swipe area for the melee attack forwards
             meleeAnimator.SetTrigger("ForwardMeleeSwipe");
-        }*/
+        }
        
 
     }
