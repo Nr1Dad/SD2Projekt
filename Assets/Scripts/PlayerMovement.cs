@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private float moveSpeed = 7f;
+    public bool faceingForward = true;
 
     private enum MovementState {idle, running, jumping, falling }
 
@@ -39,8 +40,12 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2 (dirX * moveSpeed, rb.velocity.y);
-        Debug.Log(IsGrounded());
-        if (Input.GetButtonDown("Jump") && IsGrounded()) 
+        if (Input.GetAxis("Horizontal") > 0)
+            { faceingForward = true; }
+        if (Input.GetAxis("Horizontal") < 0)
+            { faceingForward= false; }
+
+            if (Input.GetButtonDown("Jump") && IsGrounded()) 
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }

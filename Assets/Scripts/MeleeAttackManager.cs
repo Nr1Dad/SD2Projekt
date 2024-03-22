@@ -94,7 +94,10 @@ public class MeleeAttackManager : MonoBehaviour
             //Turns on the animation for the player to perform a forward melee attack
             //anim.SetTrigger("ForwardMelee");
             //Turns on the animation on the melee weapon to show the swipe area for the melee attack forwards
-            meleeAnimator.SetTrigger("ForwardMeleeSwipe");
+            if (playerMovement.faceingForward == true)
+                { meleeAnimator.SetTrigger("ForwardMeleeSwipe"); }
+            if (playerMovement.faceingForward == false)
+            { meleeAnimator.SetTrigger("BackwardsMeleeSwipes"); }
         }
        
 
