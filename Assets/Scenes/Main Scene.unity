@@ -1982,6 +1982,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96403b60e9e2e01419ecf1d016170243, type: 3}
+--- !u!20 &4417061415458605194 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4386939979542312864, guid: 96403b60e9e2e01419ecf1d016170243, type: 3}
+  m_PrefabInstance: {fileID: 4417061415458605193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7626220981651929856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2071,6 +2076,7 @@ SceneRoots:
   - {fileID: 2081678364}
   - {fileID: 2010407867950849411}
   - {fileID: 7626220981651929856}
+  - {fileID: 1936312638}
   - {fileID: 591830557}
   - {fileID: 1363269821}
   - {fileID: 1396096481}
