@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start() {
         //Sets the player to the max amount of health when the scene loads
         currentHealth = healthAmount;
-        respawnPoint = gameObject.transform;
+        respawnPoint = transform;
     }
 
     public void Damage(int amount) {
@@ -37,7 +37,8 @@ public class PlayerHealth : MonoBehaviour
             if (currentHealth <= 0) {
                 //Caps currentHealth to 0 for cleaner code
                 currentHealth = healthAmount;
-                gameObject.transform.position = respawnPoint.position;
+                //transform.position = respawnPoint.position;
+                transform.position = new Vector3( -37f, 9f, 0f);
                 hit = false;
             }
             else {
