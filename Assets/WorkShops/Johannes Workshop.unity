@@ -225,6 +225,7 @@ MonoBehaviour:
   damageable: 1
   healthAmount: 5
   invulnerabilityTime: 0.2
+  currentHealth: 0
   canRespawn: 0
   respawnPoint: {fileID: 0}
 --- !u!61 &920249089
@@ -631,30 +632,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4882374284449493142, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
-      propertyPath: m_Radius
-      value: 1.2043974
-      objectReference: {fileID: 0}
-    - target: {fileID: 4882374284449493142, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.06094315
-      objectReference: {fileID: 0}
-    - target: {fileID: 4882374284449493142, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.12763156
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758803392523879881, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.66594565
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758803392523879881, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.66594565
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758803392523879881, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.66594565
-      objectReference: {fileID: 0}
     - target: {fileID: 5758803392523879881, guid: 8609f6ea5cc5b48af948276f2dc96f99, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.713

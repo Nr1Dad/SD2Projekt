@@ -18,7 +18,8 @@ public class EnemyHealth : MonoBehaviour
     //Bool that manages if the enemy can receive more damage
     private bool hit;
     //The current amount after receiving damage the enemy has
-    private int currentHealth;
+    [SerializeField]
+    public int currentHealth;
 
     private void Start()
     {
