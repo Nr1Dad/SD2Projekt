@@ -16,7 +16,7 @@ public class V2MovingPlatform : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Vector2.Distance(transform.position, points[i].position)< 0.02f)
         {
