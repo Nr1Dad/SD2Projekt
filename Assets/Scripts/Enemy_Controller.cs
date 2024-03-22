@@ -16,7 +16,8 @@ public class Enemy_Controller : MonoBehaviour
     public int startingPoint;
     public Transform[] movePoints;
     //j i tilfælde af at nogen laver et for loop på et tidspunkt.
-    private int j; 
+    private int j;
+    public int enemyDMG=20;
 
     PlayerHealth playerhealthscript;
 
@@ -100,7 +101,7 @@ public class Enemy_Controller : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("hit a player");
-            collision.gameObject.GetComponent<PlayerHealth>().Damage(1);
+            collision.gameObject.GetComponent<PlayerHealth>().Damage(enemyDMG);
         }
     }
 }
