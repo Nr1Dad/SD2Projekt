@@ -7,12 +7,16 @@ public class Enemy_Controller : MonoBehaviour
 {
     public int enemyType;
     private Rigidbody2D rb;
-    private Vector2 startPoint;
-    public Vector2 endPoint;
-    private Vector2 targetPoint;
-    public int speed = 1;
-    public int distance;
+   // private Vector2 startPoint;
+   // public Vector2 endPoint;
+   // private Vector2 targetPoint;
+    public float speed = 1.5f;
+   // public int distance;
     private SpriteRenderer meleeEnemyRenderer;
+    public int startingPoint;
+    public Transform[] movePoints;
+    //j i tilfælde af at nogen laver et for loop på et tidspunkt.
+    private int j; 
 
     PlayerHealth playerhealthscript;
 
@@ -22,17 +26,18 @@ public class Enemy_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         meleeEnemyRenderer = gameObject.GetComponent<SpriteRenderer>();
 
+        /*
         startPoint = transform.position;
         endPoint.y = transform.position.y;
         endPoint.x = transform.position.x + distance;
-        targetPoint = endPoint;
+        targetPoint = endPoint; */ 
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        transform.position = movePoints[startingPoint].position;
 
-        
         if (enemyType == 1) //sets enemy to basic melee
         {
             Debug.Log("I'm a melee enemy!");           
@@ -46,13 +51,13 @@ public class Enemy_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     private void FixedUpdate()
     {
         //Movement for the enemy. Enemy moves back and forth always starting left to right.
-        Vector2 currentPosition = transform.position;
+        /*Vector2 currentPosition = transform.position;
         
         if (currentPosition == endPoint || currentPosition.x > endPoint.x)
         {
@@ -68,7 +73,25 @@ public class Enemy_Controller : MonoBehaviour
         }
 
         Vector2 targetDirection = (targetPoint - currentPosition).normalized; 
-        rb.MovePosition(currentPosition + targetDirection * speed * Time.deltaTime);
+        rb.MovePosition(currentPosition + targetDirection * speed * Time.deltaTime); */
+        if (Vector2.Distance(transform.position, movePoints[j].position) < 0.02f)
+        {
+            j++;
+            if (j == movePoints.Length)
+            {
+                j = 0;
+            }
+
+            if (j == 0)
+            {
+                meleeEnemyRenderer.flipX = false;
+            } else
+            {
+                meleeEnemyRenderer.flipX = true;
+            }
+        }
+
+        transform.position = Vector2.MoveTowards(transform.position, movePoints[j].position, speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
