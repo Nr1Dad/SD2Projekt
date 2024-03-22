@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D coll;
 
-    // Skal først bruges ved animation
+    // Skal fï¿½rst bruges ved animation
     private SpriteRenderer sprite;
     private Animator anim;
     [SerializeField] private LayerMask jumpableGround;  
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
 
-        // Skal først bruges ved animation
+        // Skal fï¿½rst bruges ved animation
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
@@ -52,12 +52,12 @@ public class PlayerMovement : MonoBehaviour
 
    
 
-        //Methode til at ændre animations
+        //Methode til at ï¿½ndre animations
         UpdateAnimationState();
         
     }
 
-    //Methode til at ændre animations
+    //Methode til at ï¿½ndre animations
     private void UpdateAnimationState()
     {
         MovementState state;
